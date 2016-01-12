@@ -17,6 +17,9 @@
     <Filter Include="content\test">
       <UniqueIdentifier>{1de02af1-8dbe-44ed-9840-4a3592349966}</UniqueIdentifier>
     </Filter>
+    <Filter Include="lib">
+      <UniqueIdentifier>{26fb4748-d816-4160-a9c1-01e08600933c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -25,6 +28,9 @@
     <ClCompile Include="Diesel2DTest.cpp" />
     <ClCompile Include="utils\SimpleJSONReaderTest.cpp">
       <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\BlockArrayTest.cpp">
+      <Filter>lib</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

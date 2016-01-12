@@ -67,4 +67,10 @@ TEST_CASE("Nested categories test", "[SimpleJSONReader]") {
 	REQUIRE(firstColor.g == Approx(0.75f).epsilon(0.01f));
 	REQUIRE(firstColor.b == Approx(0.5f).epsilon(0.01f));
 	REQUIRE(firstColor.a == Approx(0.25f).epsilon(0.01f));
+	ds::Vector2fPath vp;
+	reader.get_vec2_path(cats[1], "v2_path", &vp);
+	REQUIRE(vp.size() == 4);
+	const v2& ffp = vp.value(0);
+	REQUIRE(ffp.x == 200.0f);
+	REQUIRE(ffp.y == 300.0f);
 }

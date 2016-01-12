@@ -84,6 +84,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Diesel2DTest.cpp" />
+    <ClCompile Include="lib\BlockArrayTest.cpp" />
     <ClCompile Include="utils\SimpleJSONReaderTest.cpp" />
   </ItemGroup>
   <ItemGroup>
