@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Ressourcendateien">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="content">
+      <UniqueIdentifier>{3e4c9307-d8d8-40c0-9552-751b23078d6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="content\resources">
+      <UniqueIdentifier>{d98c9609-7a37-4a28-bc72-9b6b70644bbd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utils">
+      <UniqueIdentifier>{f19a3ca5-5925-4e09-863f-0b78487d292a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="content\test">
+      <UniqueIdentifier>{1de02af1-8dbe-44ed-9840-4a3592349966}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Diesel2DTest.cpp" />
+    <ClCompile Include="utils\SimpleJSONReaderTest.cpp">
+      <Filter>utils</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="content\resources\gui.json">
+      <Filter>content\resources</Filter>
+    </None>
+    <None Include="content\test\simpletest_1.json">
+      <Filter>content\test</Filter>
+    </None>
+    <None Include="content\test\simpletest_2.json">
+      <Filter>content\test</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="catch.hpp" />
+  </ItemGroup>
+</Project>
