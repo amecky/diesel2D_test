@@ -1,8 +1,8 @@
 #include "..\catch.hpp"
-#include <utils\SimpleJSONReader.h>
+#include <io\json.h>
 
-TEST_CASE("Basic loading", "[SimpleJSONReader]") {
-	ds::SimpleJSONReader reader;
+TEST_CASE("Basic loading", "[JSONReader]") {
+	ds::JSONReader reader;
 	bool ret = reader.parse("content\\test\\simpletest_1.json");
 	REQUIRE(ret == true);
 	int cats[128];
@@ -23,8 +23,8 @@ TEST_CASE("Basic loading", "[SimpleJSONReader]") {
 	REQUIRE(strcmp(file, "Credits") == 0);
 }
 
-TEST_CASE("Nested categories test", "[SimpleJSONReader]") {
-	ds::SimpleJSONReader reader;
+TEST_CASE("Nested categories test", "[JSONReader]") {
+	ds::JSONReader reader;
 	bool ret = reader.parse("content\\test\\simpletest_2.json");
 	REQUIRE(ret == true);
 	int cats[128];
@@ -73,4 +73,15 @@ TEST_CASE("Nested categories test", "[SimpleJSONReader]") {
 	const v2& ffp = vp.value(0);
 	REQUIRE(ffp.x == 200.0f);
 	REQUIRE(ffp.y == 300.0f);
+}
+
+TEST_CASE("Game Settings loading", "[JSONReader]") {
+	ds::JSONReader reader;
+	bool ret = reader.parse("content\\test\\engine_settings.json");
+	REQUIRE(ret == true);
+	int root = reader.find_category("init_actions");
+	REQUIRE(root != -1);
+	REQUIRE(reader.contains_property(root, "textures") == true);
+	const char* textureNames = reader.get_string(root, "textures");
+	REQUIRE(strcmp(textureNames, "TextureArray") == 0);
 }

@@ -85,10 +85,14 @@
   <ItemGroup>
     <ClCompile Include="Diesel2DTest.cpp" />
     <ClCompile Include="lib\BlockArrayTest.cpp" />
+    <ClCompile Include="lib\ChannelArrayTest.cpp" />
     <ClCompile Include="utils\SimpleJSONReaderTest.cpp" />
+    <ClCompile Include="world\actions\MoveByActionTest.cpp" />
+    <ClCompile Include="world\actions\WaitActionTest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="content\resources\gui.json" />
+    <None Include="content\test\engine_settings.json" />
     <None Include="content\test\simpletest_1.json" />
     <None Include="content\test\simpletest_2.json" />
   </ItemGroup>

@@ -20,6 +20,12 @@
     <Filter Include="lib">
       <UniqueIdentifier>{26fb4748-d816-4160-a9c1-01e08600933c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="world">
+      <UniqueIdentifier>{e931944a-b9e9-44c5-908b-e1c4e7200662}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="world\actions">
+      <UniqueIdentifier>{369a72cf-9747-4e16-a67e-5e3f4cbe15d1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -32,6 +38,15 @@
     <ClCompile Include="lib\BlockArrayTest.cpp">
       <Filter>lib</Filter>
     </ClCompile>
+    <ClCompile Include="lib\ChannelArrayTest.cpp">
+      <Filter>lib</Filter>
+    </ClCompile>
+    <ClCompile Include="world\actions\MoveByActionTest.cpp">
+      <Filter>world\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="world\actions\WaitActionTest.cpp">
+      <Filter>world\actions</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="content\resources\gui.json">
@@ -41,6 +56,9 @@
       <Filter>content\test</Filter>
     </None>
     <None Include="content\test\simpletest_2.json">
+      <Filter>content\test</Filter>
+    </None>
+    <None Include="content\test\engine_settings.json">
       <Filter>content\test</Filter>
     </None>
   </ItemGroup>
