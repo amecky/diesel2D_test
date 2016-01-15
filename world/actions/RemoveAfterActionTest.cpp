@@ -1,8 +1,8 @@
 #include "..\..\catch.hpp"
-#include <world\actions\WaitAction.h>
+#include <world\actions\RemoveAfterAction.h>
 
-TEST_CASE("BasicWaitActionTest", "[WaitAction]") {
-	ds::WaitAction action;
+TEST_CASE("BasicRemoveAfterActionTest", "[RemoveAfterAction]") {
+	ds::RemoveAfterAction action;
 	ds::SpriteArray ar;
 	ds::sar::allocate(ar, 20);
 	ds::ActionEventBuffer buffer;
@@ -12,7 +12,7 @@ TEST_CASE("BasicWaitActionTest", "[WaitAction]") {
 	REQUIRE(buffer.events.size() == 1);
 	const ds::ActionEvent& event = buffer.events[0];
 	REQUIRE(event.sid == sid);
-	REQUIRE(event.type == ds::AT_WAIT);
+	REQUIRE(event.type == ds::AT_KILL);
 	delete[] ar.buffer;
 }
 

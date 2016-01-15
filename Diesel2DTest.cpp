@@ -11,6 +11,11 @@
 #include <io\FileRepository.h>
 
 int main(int argc, char* argv[]) {
+	int flag = _CrtSetDbgFlag(_CRTDBG_REPORT_FLAG); // Get current flag
+	flag |= _CRTDBG_LEAK_CHECK_DF; // Turn on leak-checking bit
+	flag |= _CRTDBG_CHECK_ALWAYS_DF; // Turn on CrtCheckMemory
+	//flag |= _CRTDBG_DELAY_FREE_MEM_DF;
+	_CrtSetDbgFlag(flag); // Set flag to the new value
 	ds::gDefaultMemory = new ds::DefaultAllocator();
 	ds::repository::initialize(ds::repository::RM_DEBUG);
 
@@ -20,6 +25,7 @@ int main(int argc, char* argv[]) {
 
 	ds::repository::shutdown();
 	ds::gDefaultMemory->debug();
+	delete ds::gDefaultMemory;
 	return 0;
 }
 
