@@ -35,7 +35,7 @@ TEST_CASE("Nested categories test", "[JSONReader]") {
 	int sub_id = reader.find_category("Test2", cid);
 	REQUIRE(sub_id == 1);
 	num = reader.get_categories(cats, 128, sub_id);
-	REQUIRE(num == 2);
+	REQUIRE(num == 4);
 	int v;
 	reader.get_int(cats[0], "int", &v);
 	REQUIRE(v == 100);
@@ -73,6 +73,15 @@ TEST_CASE("Nested categories test", "[JSONReader]") {
 	const v2& ffp = vp.value(0);
 	REQUIRE(ffp.x == 200.0f);
 	REQUIRE(ffp.y == 300.0f);
+
+	float arr[32];
+	int ar_num = reader.get_array(cats[2], "array", arr, 32);
+	REQUIRE(ar_num == 9);
+	REQUIRE(arr[8] == 123.45f);
+	int i_arr[32];
+	int i_ar_num = reader.get_array(cats[3], "array", i_arr, 32);
+	REQUIRE(i_ar_num == 5);
+	REQUIRE(i_arr[2] == 5);
 }
 
 TEST_CASE("Game Settings loading", "[JSONReader]") {

@@ -89,6 +89,7 @@
     <ClCompile Include="utils\SimpleJSONReaderTest.cpp" />
     <ClCompile Include="world\actions\MoveByActionTest.cpp" />
     <ClCompile Include="world\actions\WaitActionTest.cpp" />
+    <ClCompile Include="world\WorldTest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="content\resources\gui.json" />

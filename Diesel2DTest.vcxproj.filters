@@ -47,6 +47,9 @@
     <ClCompile Include="world\actions\WaitActionTest.cpp">
       <Filter>world\actions</Filter>
     </ClCompile>
+    <ClCompile Include="world\WorldTest.cpp">
+      <Filter>world</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="content\resources\gui.json">
