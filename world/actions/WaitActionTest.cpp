@@ -13,6 +13,6 @@ TEST_CASE("BasicWaitActionTest", "[WaitAction]") {
 	const ds::ActionEvent& event = buffer.events[0];
 	REQUIRE(event.sid == sid);
 	REQUIRE(event.type == ds::AT_WAIT);
-	delete[] ar.buffer;
+	//delete[] ar.buffer;
 }
 

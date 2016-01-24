@@ -19,7 +19,7 @@ TEST_CASE("BasicMoveByActionTest", "[MoveByAction]") {
 	REQUIRE(p.x == 300.0f);
 	REQUIRE(p.y == 300.0f);
 	REQUIRE(buffer.events.size() == 0);
-	delete[] ar.buffer;
+	//delete[] ar.buffer;
 }
 
 TEST_CASE("MoveByActionBounceTest", "[MoveByAction]") {
@@ -43,5 +43,5 @@ TEST_CASE("MoveByActionBounceTest", "[MoveByAction]") {
 	const ds::ActionEvent& event = buffer.events[0];
 	REQUIRE(event.sid == sid);
 	REQUIRE(event.type == ds::AT_MOVE_BY);
-	delete[] ar.buffer;
+	//delete[] ar.buffer;
 }
