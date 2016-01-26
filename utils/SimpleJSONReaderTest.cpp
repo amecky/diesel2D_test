@@ -97,3 +97,15 @@ TEST_CASE("Game Settings loading", "[JSONReader]") {
 	const char* textureNames = reader.get_string(root, "textures");
 	REQUIRE(strcmp(textureNames, "TextureArray") == 0);
 }
+
+TEST_CASE("TokenizerParse", "[Tokenizer]") {
+	ds::Tokenizer t;
+	t.parse("Hello 12 { 40 } :");
+	REQUIRE(t.size() == 6);
+	REQUIRE(t.get(0).type == ds::Token::NAME);
+	REQUIRE(t.get(1).type == ds::Token::NUMBER);
+	REQUIRE(t.get(2).type == ds::Token::OPEN_BRACES);
+	REQUIRE(t.get(3).type == ds::Token::NUMBER);
+	REQUIRE(t.get(4).type == ds::Token::CLOSE_BRACES);
+	REQUIRE(t.get(5).type == ds::Token::SEPARATOR);
+}
