@@ -13,4 +13,5 @@ Credits {
 Highscores {
 	id : 3 
 	file : "Highscores" 
+	iv : -4
 }

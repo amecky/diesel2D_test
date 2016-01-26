@@ -21,6 +21,9 @@ TEST_CASE("Basic loading", "[JSONReader]") {
 	REQUIRE(id == 2);
 	const char* file = reader.get_string(2, "file");
 	REQUIRE(strcmp(file, "Credits") == 0);
+	id = -1;
+	reader.get_int(3, "iv", &id);
+	REQUIRE(id == -4);
 }
 
 TEST_CASE("Nested categories test", "[JSONReader]") {
